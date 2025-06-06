@@ -1,0 +1,17 @@
+{
+    "name": "Java21 Spring Boot Dev",
+    "image": "eclipse-temurin:21-jdk",
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "forwardPorts": [8609],
+    "runArgs": ["-e", "TZ=America/Bogota"],
+    //"postCreateCommand": "apt-get update && apt-get install -y curl maven git && mvn clean install",
+    "postCreateCommand":"apt-get update && apt-get install -y curl git maven && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\" && nvm install --lts && nvm use --lts && npm install && mvn clean install",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack"
+            ]
+        }
+    }
+  }

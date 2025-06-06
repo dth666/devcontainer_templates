@@ -1,0 +1,17 @@
+{
+  "name": "Node20 TypeScript Dev",
+  "image": "node:20-alpine",
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "forwardPorts": [3000],
+  "runArgs": ["-e", "TZ=America/Bogota"],
+  "postCreateCommand": "/bin/sh .devcontainer/init.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
